@@ -1,0 +1,9 @@
+[IndicoStatusPanels]
+indico_api_token="indp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+indico_base_url="https://indico.some.domain"
+webapp_ip="127.0.0.1"
+webapp_port=8080
+webapp_userpwd="some_secure_password"
+page_reload_interval=30
+local_timezone="Europe/London"
+code_reloading=false

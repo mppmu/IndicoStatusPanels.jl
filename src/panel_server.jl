@@ -90,8 +90,9 @@ function run_panel_server()
         @eval begin
             import Revise
         end
+        start_panel_server()
         Revise.entr(
-            restart_panel_server, [], [],
+            do_nothing, [], [],
             postpone = false, all = true, pause = 0.25
         )
         stop_panel_server()
@@ -100,3 +101,5 @@ function run_panel_server()
     end
 end
 export run_panel_server
+
+do_nothing() = nothing

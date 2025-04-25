@@ -91,6 +91,7 @@ function indico_roominfo(location::AbstractString, room_id::Integer, current_dt:
         end_dt = indicodt2localdt(r["endDT"])
         title = String(r["reason"])
         repeat = String(r["repeat_frequency"])
+        canceled = Bool(r["is_cancelled"])
 
         time_today(datetime::DateTime) = DateTime(Date(current_dt), Time(datetime))
         time_today(time::Time) = DateTime(Date(current_dt), time)
@@ -113,7 +114,7 @@ function indico_roominfo(location::AbstractString, room_id::Integer, current_dt:
             t_start = time_today(Time(0))
             t_end = time_today(Time(0))
         end
-        if happening_today && current_dt <= t_end
+        if !canceled && happening_today && current_dt <= t_end
             push!(t_starts, t_start)
             push!(t_ends, t_end)
             push!(titles, title)

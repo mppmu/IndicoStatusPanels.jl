@@ -17,7 +17,12 @@
 
 function local_datetime()
     local_tz = config[].local_tz
-    return DateTime(astimezone(ZonedDateTime(unix2datetime(time()), tz"UTC"), local_tz))
+    override_time = config[].override_time
+    if isempty(override_time)
+        return DateTime(astimezone(ZonedDateTime(unix2datetime(time()), tz"UTC"), local_tz))
+    else
+        return DateTime(override_time)
+    end
 end
 
 function indico_room_uri(location::AbstractString, room::AbstractString)

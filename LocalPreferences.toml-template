@@ -6,4 +6,6 @@ webapp_port=8080
 webapp_userpwd="some_secure_password"
 page_reload_interval=30
 local_timezone="Europe/London"
+override_time=""
+# override_time="2025-01-02T12:34:00"
 code_reloading=false

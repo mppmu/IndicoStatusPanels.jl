@@ -12,6 +12,7 @@ function load_config()
     webapp_userpwd = String(@load_preference("webapp_userpwd"))
     page_reload_interval = Int(@load_preference("page_reload_interval"))
     local_tz = TimeZone(@load_preference("local_timezone"))
+    override_time = String(@load_preference("override_time"))
     code_reloading = Bool(@load_preference("code_reloading"))
 
     rm(tmpassetdir, recursive=true)
@@ -21,7 +22,7 @@ function load_config()
         assetdir, tmpassetdir,
         api_token, indico_url,
         webapp_ip, webapp_port, webapp_userpwd,
-        page_reload_interval, local_tz,
+        page_reload_interval, local_tz, override_time,
         code_reloading
     )
 end

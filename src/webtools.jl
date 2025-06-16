@@ -1,13 +1,5 @@
 # This file is a part of IndicoStatusPanels.jl, licensed under the MIT License (MIT).
 
-function qrcode_uri(content::AbstractString, label::AbstractString)
-    filename = joinpath(tmpassetdir, "$(label).png")
-    if !ispath(filename)
-        exportqrcode(content, filename, pixels = 160, width = 0)
-    end
-    return filename
-end
-
 
 split_uri_path(uri::URI) = split(strip(uri.path, '/'), '/')
 

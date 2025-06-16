@@ -25,7 +25,6 @@ using URIs: URI, queryparams
 using MIMEs: mime_from_extension
 using TimeZones: TimeZones, ZonedDateTime, astimezone, @tz_str
 using HypertextLiteral: HypertextLiteral, @htl
-using QRCoders: exportqrcode
 
 include("config.jl")
 include("indico_api.jl")
